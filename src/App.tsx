@@ -40,7 +40,7 @@ const CONFIG = {
   },
   memoryCoverPhoto: '/photos/human-15.jpeg',
   letterPhoto: '/photos/human-14.jpeg',
-  birthdaySongVideo: '/media/birthday-song.mp4',
+  birthdaySongYoutubeUrl: 'https://www.youtube.com/embed/jaqBg-5XboU?rel=0',
   birthdaySongLabel: 'Happy Birthday, my love ♡',
   birthdayMessage:
     'Happy birthday to my favorite person. Thank you for making ordinary days feel like tiny celebrations. I hope this year brings you soft mornings, loud laughs, and every sweet little thing your heart has been waiting for. Keep shining, birthday cutie!',
@@ -580,15 +580,15 @@ function MusicScreen({ go }: { go: (screen: Screen) => void }) {
               className="bubu-sticker absolute -bottom-5 -left-3 h-36 w-36 object-contain mix-blend-multiply sm:h-44 sm:w-44"
             />
           </div>
-          <div className="joyful-note-card relative flex min-h-[390px] flex-col justify-center overflow-hidden rounded-[28px] px-7 py-9 sm:px-10">
-            <span className="joyful-note-sticker" aria-hidden="true">🎈</span>
-            <p className="eyebrow">background music for your birthday</p>
-            <h2 className="mt-3 max-w-md font-display text-5xl leading-tight text-coral sm:text-6xl">Make a wish &amp; smile</h2>
-            <p className="mt-5 max-w-md text-base leading-8 text-cocoa/70">The happiest little tune is playing while you look through our memories. Tap the music pill anytime to pause or play it.</p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm font-semibold text-cocoa/65">
-              <span className="music-chip">♡ birthday joy</span>
-              <span className="music-chip">✦ made for you</span>
-            </div>
+          <div className="music-video-card relative min-h-[390px] overflow-hidden rounded-[28px]">
+            <iframe
+              className="music-video-frame"
+              src={CONFIG.birthdaySongYoutubeUrl}
+              title="Our birthday soundtrack"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
